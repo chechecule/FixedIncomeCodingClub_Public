@@ -180,18 +180,36 @@ def discount_factor(irs, m):
 
     return discount
 
-def spot_rates(irs_rates, discount_factors, maturity):
+df.loc['0.25','Zero'] = -math.log(df.loc['0.25','DF'])/0.2
 
-    spot_rates = list()
+df.loc['0.25','Forward']=(df.loc['0.25','DF'] / df.loc['0.50','DF'])
 
-    spot_rates.append(
-        irs_rates[0]
+#Zero 구하기
+df.loc['0.25','Zero'] = -math.log(df.loc['0.25','DF'])/0.25*100
+df.loc['0.50','Zero'] = -math.log(df.loc['0.50','DF'])/0.50*100
+df.loc['0.75','Zero'] = -math.log(df.loc['0.75','DF'])/0.75*100
+df.loc['1.00','Zero'] = -math.log(df.loc['1.00','DF'])/1.00*100
+df.loc['1.25','Zero'] = -math.log(df.loc['1.25','DF'])/1.25*100
+df.loc['1.50','Zero'] = -math.log(df.loc['1.50','DF'])/1.50*100
+df.loc['1.75','Zero'] = -math.log(df.loc['1.75','DF'])/1.75*1
+
+def zero_rates(irs, d, m):
+
+    zero_rates = list()
+
+    zero_rates.append(
+        irs[0]
     )
+
+
 
     for i in range(1, len(irs_rates)):
         mat_diff = maturity[i] - maturity[i-1]
         spot_rates.append(
             ((1/discount_factors[i])**(1/(maturity[i]*(1/mat_diff)))-1)*(1/mat_diff)
             )
+
+def forward_rates(d, m):
+
 
 
