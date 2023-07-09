@@ -11,6 +11,17 @@ ty_ext = re.compile(r"[\d]{2}-[\d]{1,2}")
 # extracts 
 
 # extracts abbreviations of ty and msb
-abbr_ext = re.compile(
-	r"([국당]|[국전]|[통당]|[통딱]|[구통]|)"
+abbr_ext_bond = re.compile(
+	r"([국당]|[국전]|[통당]|[통딱]|[구통]|[구구통])"
 )
+
+abbr_ext_buy = re.compile(
+	r"([사자]|[사고]|[+])"
+)
+
+abbr_ext_sell = re.compile(
+	r"([팔자]|[팔고]|[대치]|[-])"
+)
+
+
+
