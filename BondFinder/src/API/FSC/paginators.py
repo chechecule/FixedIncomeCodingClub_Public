@@ -30,13 +30,13 @@ class FSCAPIPaginatorMixin(BasePaginatorMixin):
         self._iterator_params["pageNo"] = xml_return["pageNo"]
         self._iterator_params["numOfRows"] = xml_return["numOfRows"]
 
-        self._total_page = round(xml_return["totalCount"]/xml_return["numOfRows"])
+        self._total_page = round(xml_return["totalCount"]/xml_return[totalCount"numOfRows"])
 
     def _set_paginator_params_for_next(self):
-        self._iterator_params["page_no"] += 1
+        self._iterator_params["pageNo"] += 1
 
     def initialize_params_for_iterator(self, **params):
-        self.non_iterator_params = parßams
+        self.non_iterator_params = params
 
     def __next__(self, **params):
         """
@@ -54,9 +54,9 @@ class FSCAPIPaginatorMixin(BasePaginatorMixin):
         if ret:
             self._set_paginator_params_from_ret(r)
 
-            if int(self._iterator_params["page_no"]) < int(self._total_page):
+            if int(self._iterator_params["pageNo"]) < int(self._total_page):
                 self._set_paginator_params_for_next()
-                return ret, r.json()
+                return ret, r
             else:
                 raise StopIteration
 
