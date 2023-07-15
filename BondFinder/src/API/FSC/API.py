@@ -9,10 +9,13 @@
 import requests
 import pandas as pd
 
+
 from core.singleton_class import SingletonInstance
 
 from core.webAPI import BaseOpenAPI
 from core.validators import response_is_200, is_xml
+
+from .paginators import FSCAPIPaginatorMixin
 
 #https://api.data.go.kr/1160100/GetBondSecuritiesInfoService/getBondPriceInfo?
 
@@ -23,7 +26,7 @@ class BaseFSCAPI(BaseOpenAPI):
     saving raw data.
     """
 
-    validators = [success_code_in_header, is_xml]
+    validators = [response_is_200, is_xml]
 
     def __init__(self, APIKey, *args, **kwargs):
         super().__init__(APIKey, *args, **kwargs)
@@ -39,11 +42,16 @@ class BaseFSCAPI(BaseOpenAPI):
 
     @property
     def url(self):
-        return "https://api.data.go.kr/" + self.path + f".{self.return_type()}?"
+        return "http://apis.data.go.kr" + self.path
 
     def _add_params(self, **params):
+        print(self.return_type)
+
         params.update(
-            {"serviceKey" : self.APIKey}
+            {
+            "serviceKey" : self.APIKey,
+            "resultType" : self.return_type()
+            }
         )
         return params
 
@@ -52,3 +60,7 @@ class BaseFSCAPI(BaseOpenAPI):
             content_type=self.return_type(),
             **params
         )
+
+
+class FSCPaginatorAPI(BaseFSCAPI , FSCAPIPaginatorMixin):
+    pass
