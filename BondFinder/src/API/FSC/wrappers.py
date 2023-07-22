@@ -8,9 +8,9 @@ from API.core.validators import isolate_params
 from API.core.wrapper_decorators import required_kwargs, recommended_kwargs
 from API.core.env_functions import get_dotenv, get_env_variable, get_env_variable_list
 
-from utils.time_functions import random_sleep
+# from utils.time_functions import random_sleep
 
-from FSC.API import FSCPaginatorAPI
+from .API import FSCPaginatorAPI
 
 
 
@@ -36,7 +36,7 @@ def getBondData(**kwargs) -> pd.DataFrame:
     fsc.set_return_type("xml")
     fsc.skip_validation = True
 
-    kwargs = {"numOfRows" : 2, "pageNo" : 1, "basDt" : 20200409}
+    kwargs = {"numOfRows" : 100, "pageNo" : 1, "basDt" : kwargs.get("basDt")}
 
     non_iterator_params = isolate_params(
         needed_kwargs = ["basDt", "numOfRows", "pageNo"],
@@ -50,7 +50,8 @@ def getBondData(**kwargs) -> pd.DataFrame:
     bond_data_list = list()
 
     for (ret, r) in fsc:
-        bond_data_list.append(r["response"]["body"]["items"]["item"])
-        random_sleep(1, 5)
+        bond_data_list.extend(r["response"]["body"]["items"]["item"])
+        break
+        # random_sleep(1, 5)
 
-    return pd.DataFRame(bond_data_list)
+    return pd.DataFrame(bond_data_list)
