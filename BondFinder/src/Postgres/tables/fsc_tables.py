@@ -7,6 +7,7 @@ fsc_bond_issue = """
     CREATE TABLE fsc_bond_issue
         (
             basDt date, crno text, isinCd text, ininCdNm text, scrsItmsKcd text,
+            isincdnm text,
             scrsItmsKcdNm text, bondIssuCurCd text, bondIssuCurCdNm text,
             bondIsurNm text, sicNm text, bondIssuDt text, bondExprDt text,
             irtChngDcd text, irtChngDcdNm text, bondSrfcInrt text, grnDcd text,
