@@ -1,6 +1,4 @@
 # FSC/wrappers.py
-import xmltodict
-import datetime
 import pandas as pd
 from functools import reduce
 
@@ -33,7 +31,7 @@ def getBondData(**kwargs) -> pd.DataFrame:
     """
 
     fsc.set_path("/1160100/service/GetBondIssuInfoService/getBondBasiInfo")
-    fsc.set_return_type("xml")
+    fsc.set_return_type("json")
     fsc.skip_validation = True
 
     kwargs = {"numOfRows" : 100, "pageNo" : 1, "basDt" : kwargs.get("basDt")}
@@ -51,7 +49,5 @@ def getBondData(**kwargs) -> pd.DataFrame:
 
     for (ret, r) in fsc:
         bond_data_list.extend(r["response"]["body"]["items"]["item"])
-        break
-        # random_sleep(1, 5)
 
     return pd.DataFrame(bond_data_list)

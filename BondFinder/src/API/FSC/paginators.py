@@ -1,5 +1,5 @@
 # OpenDart/paginators.py
-import xmltodict
+import json
 
 from API.core.paginator import BasePaginatorMixin
 
@@ -26,13 +26,20 @@ class FSCAPIPaginatorMixin(BasePaginatorMixin):
         cases which the API does not properly reflect request parameters
         """
 
-        xml_return = xmltodict.parse(r.content)
-        self._iterator_params["pageNo"] = xml_return["response"]["body"]["pageNo"]
-        self._iterator_params["numOfRows"] = xml_return["response"]["body"]["numOfRows"]
+        json_return = r.json()
+        json_body = json_return.get("response", dict()).get("body", dict())
+
+        self._iterator_params["pageNo"] = json_body.get(
+            "pageNo", self._iterator_params["pageNo"]
+        )
+        self._iterator_params["numOfRows"] = json_body.get(
+            "numOfRows", self._iterator_params["numOfRows"]
+        )
 
         self._total_page = round(
-            int(xml_return["response"]["body"]["totalCount"])/\
-                int(xml_return["response"]["body"]["numOfRows"]))
+            int(json_body.get("totalCount"))/\
+                int(self._iterator_params["numOfRows"])
+        )
 
     def _set_paginator_params_for_next(self):
 
@@ -61,7 +68,7 @@ class FSCAPIPaginatorMixin(BasePaginatorMixin):
 
             if int(self._iterator_params["pageNo"]) < int(self._total_page):
                 self._set_paginator_params_for_next()
-                return ret, xmltodict.parse(r.content)
+                return ret, r.json()
             else:
                 raise StopIteration
 
