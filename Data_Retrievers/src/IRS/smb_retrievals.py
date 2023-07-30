@@ -11,10 +11,10 @@ from bs4.element import Tag
 # import pandas
 import pandas as pd
 
+
 def _extract_irs_table(
         irs_table: Tag,
-        CD_rates: float
-    ) -> pd.DataFrame:
+        cd_rate: float) -> pd.DataFrame:
     """
     Internal function which receives two arguments and returns a dataframe of IRS Table
     1) irs_table arg is supposed to be a 'find_all' [0] return from the raw html of SMB website
@@ -24,7 +24,7 @@ def _extract_irs_table(
     2) CD_rates are not retrievable from the webpage which the irs rates are extracted, thus it will
     receive CD_rates manually to complete the IRS table
     """
-    data_list = list({"3M" : CD_rates})
+    data_list = list({"3M": cd_rate})
     for tr in irs_table.find_all("tr"):
         # get all table rows and initialize and append it in the list
         data = dict()
@@ -38,9 +38,9 @@ def _extract_irs_table(
     df = df.drop_duplicates()
     return df
 
+
 async def _get_irs_html(
-        date: str
-    ):
+        date: str):
     """
     This asynchronous function retrieves IRS html from the SM website
     It receives the 'date' string argument which serves as the website "조회하기" input
@@ -52,7 +52,7 @@ async def _get_irs_html(
     await page.goto('http://www.smbs.biz/Exchange/IRS.jsp')
     await page.waitFor(2000)
 
-    # click on the searcDate Input Field to activate javascript
+    # click on the searchDate Input Field to activate javascript
     elements = await page.xpath("//input[contains(@id, 'searchDate')]")
     await elements[0].click()
     await page.waitFor(1000)
@@ -62,7 +62,7 @@ async def _get_irs_html(
         document.getElementById('searchDate').value = '{date}';
     }}""")
 
-    #click on 조회하기
+    # click on 조회하기
     elements = await page.xpath("//img[contains(@alt, '조회하기')]")
     await elements[0].click()
 
@@ -71,10 +71,10 @@ async def _get_irs_html(
     await browser.close()
     return html
 
+
 def get_irs_df(
         date: str,
-        CD_rate: float
-    ) -> pd.DataFrame:
+        cd_rate: float) -> pd.DataFrame:
     """
     This function receives 2 arguments: 'date' and 'CD_rate'.
     1) It receives the 'date' string argument which serves as the website "조회하기" input
@@ -94,5 +94,5 @@ def get_irs_df(
     date = soup.find_all("input", attrs={"name": "StrSchFull3"})[0]
     print(f"date = {date.text.strip()}")
 
-    df = _extract_irs_table(irs_table, CD_rate)
+    df = _extract_irs_table(irs_table, cd_rate)
     return df
