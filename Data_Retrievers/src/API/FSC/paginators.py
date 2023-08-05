@@ -1,6 +1,4 @@
 # OpenDart/paginators.py
-import json
-
 from API.core.paginator import BasePaginatorMixin
 
 
