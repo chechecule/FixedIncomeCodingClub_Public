@@ -16,7 +16,8 @@ Make sure than git is not tracking any files with the .env extension
 def get_dotenv(env_name):
   env_dir = Path(__file__).resolve().parents[1]
   env_path = Path(env_dir)/f"{env_name}"
-
+  print("get_dotenv running")
+  print(env_path)
   if env_path.exists():
     load_dotenv(dotenv_path=env_path)
 

@@ -12,34 +12,41 @@ from .API import FSCPaginatorAPI
 
 
 
-
-get_dotenv("FSC.env")
-FSC_krey = get_env_variable("Key")
+FSC_key = "bCvxIs2OB+YwCRrOBw2Ca0bL483bA1VzGHf1w55JpEurqqu7WMWdH+uvJJtcmUTJOGK+i/8avBJT+aldq/kozg=="
+#get_dotenv("FSC.env")
+#FSC_key = get_env_variable("Key")
 
 fsc = FSCPaginatorAPI(
     APIKey = FSC_key
 )
-
-print("heloE")
 
 
 @recommended_kwargs(["basDt"])
 def getBondData(**kwargs) -> pd.DataFrame:
     """
     gets Issued Bond Data from FSC
-    https://www.data.go.kr/data/15059592/openapi.do
+    https://www.data.go.kr/data/15043421/openapi.do
     """
 
+    '''
     fsc.set_path("/1160100/service/GetBondIssuInfoService/getBondBasiInfo")
+    이전 path
+    '''
+
+    fsc.set_path("/1160100/service/GetBondTradInfoService/getIssuIssuItemStat")
+
     fsc.set_return_type("json")
     fsc.skip_validation = True
 
     kwargs = {"numOfRows" : 100, "pageNo" : 1, "basDt" : kwargs.get("basDt")}
+    #100개를 한번에 가져오고 page no 1부터 시작. 기준일자는 따로 지정
+
 
     non_iterator_params = isolate_params(
         needed_kwargs = ["basDt", "numOfRows", "pageNo"],
         kwargs = kwargs
     )
+    #이게 있나 기본적으로 확인하는 작업인듯
 
 
     fsc.initialize_params_for_iterator(**non_iterator_params)

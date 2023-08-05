@@ -24,7 +24,7 @@ class FSCAPIPaginatorMixin(BasePaginatorMixin):
         cases which the API does not properly reflect request parameters
         """
 
-        json_return = r.json()
+        json_return = r
         json_body = json_return.get("response", dict()).get("body", dict())
 
         self._iterator_params["pageNo"] = json_body.get(
