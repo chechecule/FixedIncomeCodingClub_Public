@@ -32,7 +32,7 @@ def getBondData(**kwargs) -> pd.DataFrame:
     fsc.set_return_type("json")
     fsc.skip_validation = True
 
-    kwargs = {"numOfRows" : 100, "pageNo" : 1, "basDt" : kwargs.get("basDt")}
+    kwargs = {"numOfRows" : 15, "pageNo" : 1, "basDt" : kwargs.get("basDt")}
     #100개를 한번에 가져오고 page no 1부터 시작. 기준일자는 따로 지정
 
 
@@ -51,12 +51,6 @@ def getBondData(**kwargs) -> pd.DataFrame:
     bond_data_list = list()
 
     for (ret, r) in fsc:
-        print(r)
-        print(ret)
 ## 반복문을 통해 fsc의 요소들을 하나씩 가져와서 ret과 r로 언패킹
         bond_data_list.extend(r["response"]["body"]["items"]["item"])
-        print(type(fsc))
-    print(bond_data_list)
-    print(fsc)
-#fsc는
     return pd.DataFrame(bond_data_list)
