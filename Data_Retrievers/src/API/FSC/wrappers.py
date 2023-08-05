@@ -1,4 +1,4 @@
-# FSC/wrappers.py
+# FSC/wrappers.pye
 import pandas as pd
 from functools import reduce
 
@@ -14,13 +14,13 @@ from .API import FSCPaginatorAPI
 
 
 get_dotenv("FSC.env")
-FSC_key = get_env_variable("Key")
+FSC_krey = get_env_variable("Key")
 
 fsc = FSCPaginatorAPI(
     APIKey = FSC_key
 )
 
-
+print("heloE")
 
 
 @recommended_kwargs(["basDt"])
