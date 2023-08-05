@@ -1,8 +1,5 @@
 # FSC/wrappers.py
-import xmltodict
-import datetime
 import pandas as pd
-from functools import reduce
 
 from core.validators import isolate_params
 from core.wrapper_decorators import required_kwargs, recommended_kwargs
