@@ -19,7 +19,7 @@ FSC_key = "bCvxIs2OB+YwCRrOBw2Ca0bL483bA1VzGHf1w55JpEurqqu7WMWdH+uvJJtcmUTJOGK+i
 fsc = FSCPaginatorAPI(
     APIKey = FSC_key
 )
-
+#paginator에서 fsc 키를 넣고 실행
 
 @recommended_kwargs(["basDt"])
 def getBondData(**kwargs) -> pd.DataFrame:
@@ -34,7 +34,7 @@ def getBondData(**kwargs) -> pd.DataFrame:
     '''
 
     fsc.set_path("/1160100/service/GetBondTradInfoService/getIssuIssuItemStat")
-
+#데이터를가져온다
     fsc.set_return_type("json")
     fsc.skip_validation = True
 
@@ -52,9 +52,17 @@ def getBondData(**kwargs) -> pd.DataFrame:
     fsc.initialize_params_for_iterator(**non_iterator_params)
     fsc._set_paginator_params()
 
+
+#결국 여기밑에서 가져오는것
     bond_data_list = list()
 
     for (ret, r) in fsc:
+        print(r)
+## 반복문을 통해 fsc의 요소들을 하나씩 가져와서 ret과 r로 언패킹
         bond_data_list.extend(r["response"]["body"]["items"]["item"])
 
+
+    print(bond_data_list)
+    print(fsc)
+#fsc는
     return pd.DataFrame(bond_data_list)
