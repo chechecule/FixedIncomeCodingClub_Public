@@ -30,6 +30,8 @@ The club
 We share our weekly projects. Please take in account that the code we share is not fully inclusive. 
 Some code or logic is deliberately left out to protect proprietary rights of the project.
 
+*Main Branch [Link] (https://github.com/keonsunkim/FixedIncomeCodingClub_Yeoui/tree/main)
+
  * [Week 1 Orientation](https://www.notion.so/IRS_Week1-c389529dbb5a4c988624f815f0d949be)
  
 
