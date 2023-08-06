@@ -133,38 +133,52 @@ def spot_to_forward(
     return _get_forward(spot_rates, maturity)
         
 
-def IRS_interpolate(term, irs_rates, maturity, *args, **kwargs):
+def IRS_interpolate(term, irs, m, *args, **kwargs):
 
     interpolated_maturity = list()
     interpolated_irs_rates = list()
 
 
-    for i in range(len(maturity)):
-        if ((maturity[i] - maturity[i-1]) == term):
-            interploated_maturity.append(maturity(i))
-            interpolated_irs_rates.append(irs_rates(i))
+    for i in range(len(m)):
+        if ((m[i] - m[i-1]) == term):
+            interpolated_maturity.append(m(i))
+            interpolated_irs_rates.append(irs(i))
 
         else:
-            for inter_term in range(term, maturity[i-1], maturity[i]):
+            for inter_term in range(term, m[i-1], m[i]):
                 interpolated_maturity.append(inter_term)
-                interpolated_irs_rates.append(None)
+                interpolated_irs_rates.append(
+                    irs[i] + \
+                    (irs[i]-irs[i-1])/((inter_term-m[i])/(m[i]-m[i-1]))
+                )
 
-    return interpolated_irs_rates, interploated_maturity
+    return interpolated_irs_rates, interpolated_maturity
 
-
-
-def discount_factor(irs_rates, maturity):
-    discount_factors = list()
-    discount_factors.append(
-        1/(1+irs_rates[0]/((1/maturity[1]-maturity[0])))
+def discount_factor(irs, m):
+    discount = list()
+    discount.append(
+        1/(1+irs[0]/((1/m[1]-m[0])))
         )
-    for i in range(1, len(maturity)):
-        mat_diff = maturity[i] - maturity[i-1]
-        discount_factors.append(
-            (1 - irs_rates[i]/(1/mat_diff)*discount_factors[i-1])/(1+(irs_rates[i]/(1/mat_diff)))
-        )
+    """
+    next one:
+    (1-irs[1]/(1/m_diff)*discount[0])/(1+irs[1]/(1/m_diff))
 
-    return discount_factors
+    next one
+    (1-irs[2]/(1/m_diff)*discount[0]-irs[2]/(1/m_diff)*discount[1])/(1+irs[2]/(1/m_diff))
+    equals
+    (1-irs[2]/(1/m_diff)*(discount[0]+discount[1]))/(1+irs[2]/(1/m_diff))
+    """
+
+    for i in range(1, len(m)):
+        m_diff = m[i] - m[i-1]
+
+        dis_i = (1-irs[i]/(1/m_diff)*sum(discount[:i-1]))\
+        /(1+irs[i]/(1/m_diff))
+
+
+        discount.append(dis_i)
+
+    return discount
 
 def spot_rates(irs_rates, discount_factors, maturity):
 
