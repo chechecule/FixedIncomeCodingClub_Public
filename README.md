@@ -37,4 +37,5 @@ Some code or logic is deliberately left out to protect proprietary rights of the
      * [Code](https://github.com/keonsunkim/FixedIncomeCodingClub_Yeoui/tree/bdbd7a8d9bc51235b2506b2f2774f60c754a579b)
  * [Week 3 Notes](https://www.notion.so/IRS_Week3-b57e1e77522048cb8c74a71ca454144d)
      * [Code](https://github.com/keonsunkim/FixedIncomeCodingClub_Yeoui/tree/6383ea1adf993cbf445d0ffa5324944c9ba2e94e)
-
+ * [Week 4 Notes](https://www.notion.so/IRS_Week4-01a4e3ffb6a44dbaa27d642d86608b18)
+     * [Code](https://github.com/keonsunkim/FixedIncomeCodingClub_Yeoui/tree/564d669e8b998f839580f046aca9d63983ec8961)
