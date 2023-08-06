@@ -8,12 +8,12 @@ The club consists of professionals in the Korean fixed income market.
 
 The following is a short bio and description of the club members.
 
-Jaehwa Youm - Rating Analysist at Korea Ratings 
-Keon Sun Kim - Fixed Income Portfolio Manager at NH-Amundi Asset Management 
-Jonghak Chae - Fixed Income Trader at Shinhan Securities
-Dabin Cho - Credit Analyst Hana Asset Management 
-Kitae Ki - Fixed Income Portfolio Manager at Midas Asset Management
-Ki Taeui - Fixed Income Research Assistant at Shinyoung Securities
+<br>Jaehwa Youm - Rating Analysist at Korea Ratings 
+<br>Keon Sun Kim - Fixed Income Portfolio Manager at NH-Amundi Asset Management 
+<br>Jonghak Chae - Fixed Income Trader at Shinhan Securities
+<br>Dabin Cho - Credit Analyst Hana Asset Management 
+<br>Kitae Ki - Fixed Income Portfolio Manager at Midas Asset Management
+<br>Ki Taeui - Fixed Income Research Assistant at Shinyoung Securities
 
 
 ## Weekly Meetings
@@ -30,7 +30,7 @@ The club
 We share our weekly projects. Please take in account that the code we share is not fully inclusive. 
 Some code or logic is deliberately left out to protect proprietary rights of the project.
 
-*Main Branch [Link] (https://github.com/keonsunkim/FixedIncomeCodingClub_Yeoui/tree/main)
+* Main Branch [Link] (https://github.com/keonsunkim/FixedIncomeCodingClub_Yeoui/tree/main)
 
  * [Week 1 Orientation](https://www.notion.so/IRS_Week1-c389529dbb5a4c988624f815f0d949be)
  
