@@ -32,6 +32,6 @@ Some code or logic is deliberately left out to protect proprietary rights of the
 
  * [Week 1 Orientation](https://www.notion.so/IRS_Week1-c389529dbb5a4c988624f815f0d949be)
  * [Week 2 Notes](https://www.notion.so/IRS_Week2-e3b48ac2adb04016a26a361c0c1fa12d)
-     * [Code](https://github.com/keonsunkim/FixedIncomeCodingClub_Yeoui/tree/82bd3ced5a40e41f7bd4708449841c7a1eacdd33)
+     * [Code](https://github.com/keonsunkim/FixedIncomeCodingClub_Yeoui/tree/bdbd7a8d9bc51235b2506b2f2774f60c754a579b)
  
 
