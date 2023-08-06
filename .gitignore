@@ -3,6 +3,16 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
+# DS Store
+**/.DS_Store
+
+# Jetbrain
+.idea
+**/.idea
+
+
+
 # C extensions
 *.so
 
