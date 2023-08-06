@@ -49,15 +49,17 @@ class BaseOpenAPI():
                 return False
         return True
 
-    def get(self, **params):
+    def get(self, content_type, **params):
         params = self._add_params(**params)
+        print(f"params = {params}")
         r = requests.get(self.url, headers=self.headers, params=params)
+        print(r.url)
         if self._validate_response(r, params.get("content_type", None)):
             return True, r
         else:
             return False, r
 
-    def post(self, **params):
+    def post(self, content_type, **params):
         params = self._add_params(**params)
         r = requests.post(self.url + self.path, headers=self.headers, params=params)
         if self._validate_response(r, params.get("content_type", None)):
