@@ -31,7 +31,10 @@ We share our weekly projects. Please take in account that the code we share is n
 Some code or logic is deliberately left out to protect proprietary rights of the project.
 
  * [Week 1 Orientation](https://www.notion.so/IRS_Week1-c389529dbb5a4c988624f815f0d949be)
+
+#### IRS Project
  * [Week 2 Notes](https://www.notion.so/IRS_Week2-e3b48ac2adb04016a26a361c0c1fa12d)
      * [Code](https://github.com/keonsunkim/FixedIncomeCodingClub_Yeoui/tree/bdbd7a8d9bc51235b2506b2f2774f60c754a579b)
- 
+ * [Week 3 Notes](https://www.notion.so/IRS_Week3-b57e1e77522048cb8c74a71ca454144d)
+     * [Code](https://github.com/keonsunkim/FixedIncomeCodingClub_Yeoui/tree/6383ea1adf993cbf445d0ffa5324944c9ba2e94e)
 
