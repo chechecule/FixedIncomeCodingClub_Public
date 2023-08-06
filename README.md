@@ -1,34 +1,37 @@
 # FixedIncomeCodingClub
 
-This is the public version of the FixedIncomeCodingClub Repository. This project started in 2023 June 10, for the purpose of studying fixed income coding, and to ultimately build projects that can be applied in the workplace environment. 
+This is the public version of the FixedIncomeCodingClub Repository. This project started on June 10, 2023, with the purpose of studying fixed income coding, and to ultimately build projects that can be applied in real-world workplace environment. 
+
+## Table of Contents
+
+- [About Us](#about-us)
+- [Weekly Meetings](#weekly-meetings)
+- [Project Updates](#project-updates)
 
 ## About Us
 
-The club consists of professionals in the Korean fixed income market. 
+The FixedIncomeCodingClub consists of professionals in the Korean fixed income market. <br>
+Here's a short bio and description of the club members:
 
-The following is a short bio and description of the club members.
-
-Jaehwa Youm - Rating Analysist at Korea Ratings 
-Keon Sun Kim - Fixed Income Portfolio Manager at NH-Amundi Asset Management 
-Jonghak Chae - Fixed Income Trader at Shinhan Securities
-Dabin Cho - Credit Analyst Hana Asset Management 
-Kitae Ki - Fixed Income Portfolio Manager at Midas Asset Management
-Ki Taeui - Fixed Income Research Assistant at Shinyoung Securities
-
+- Jaehwa Youm - Rating Analyst at Korea Ratings <br>
+- Keon Sun Kim - Fixed Income Portfolio Manager at NH-Amundi Asset Management <br>
+- Jonghak Chae - Fixed Income Trader at Shinhan Securities<br>
+- Dabin Cho - Credit Analyst at Hana Asset Management <br>
+- Kitae Ki - Fixed Income Portfolio Manager at Midas Asset Management<br>
+- Ki Taeui - Fixed Income Research Assistant at Shinyoung Securities<br>
 
 ## Weekly Meetings
 
-The club 
-* Meets on a weekly basis and discusses tasks and roles
-* Establishes weekly objectives and responsibilities
-* Share progress and offer constructive comments
-* Track progress in a project basis
+Our club meets on a weekly basis to :
+* Discuss tasks and roles
+* Set weekly objectives and responsibilities
+* Share progress and provide constructive feedback
+* Track project development
 
 
-## Weekly
+## Project Updates
 
-We share our weekly projects. Please take in account that the code we share is not fully inclusive. 
-Some code or logic is deliberately left out to protect proprietary rights of the project.
+We share our weekly progress on ongoing projects. Please be aware that the code we share here is not fully inclusive, as certain codes or logic is deliberately left out to protect for proprietary reasons.
 
  * [Week 1 Orientation](https://www.notion.so/IRS_Week1-c389529dbb5a4c988624f815f0d949be)
 
@@ -39,3 +42,5 @@ Some code or logic is deliberately left out to protect proprietary rights of the
      * [Code](https://github.com/keonsunkim/FixedIncomeCodingClub_Yeoui/tree/6383ea1adf993cbf445d0ffa5324944c9ba2e94e)
  * [Week 4 Notes](https://www.notion.so/IRS_Week4-01a4e3ffb6a44dbaa27d642d86608b18)
      * [Code](https://github.com/keonsunkim/FixedIncomeCodingClub_Yeoui/tree/564d669e8b998f839580f046aca9d63983ec8961)
+  
+#### KBond OTC Bid-Ask Search Engine Project
