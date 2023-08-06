@@ -50,3 +50,5 @@ We share our weekly progress on ongoing projects. Please be aware that the code 
      * [Code](https://github.com/keonsunkim/FixedIncomeCodingClub_Public/tree/ac78583aad9fa8c5fc640f1960fae5f5aa687cf4)
  * [Week 3 Notes](https://www.notion.so/KBondSearch_Week3-db2e999713ef434daa51459753dfd28e)
      * [Code](https://github.com/keonsunkim/FixedIncomeCodingClub_Public/tree/8af3bd5461818710a76571475185dc55b35abac4)
+ * [Week 4 Notes](https://www.notion.so/KBondSearch_Week4-afdd89591267488c8af3517798e365e9)
+     * [Code](https://github.com/keonsunkim/FixedIncomeCodingClub_Public/tree/e7a11418e53e4b4c65d4fc3e6d057a73343863bb)
