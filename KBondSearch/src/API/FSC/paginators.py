@@ -1,7 +1,7 @@
 # OpenDart/paginators.py
 import xmltodict
 
-from core.paginator import BasePaginatorMixin
+from API.core.paginator import BasePaginatorMixin
 
 
 class FSCAPIPaginatorMixin(BasePaginatorMixin):

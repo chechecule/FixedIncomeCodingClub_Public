@@ -10,10 +10,10 @@ import requests
 import pandas as pd
 
 
-from core.singleton_class import SingletonInstance
+from API.core.singleton_class import SingletonInstance
 
-from core.webAPI import BaseOpenAPI
-from core.validators import response_is_200, is_xml
+from API.core.webAPI import BaseOpenAPI
+from API.core.validators import response_is_200, is_xml
 
 from .paginators import FSCAPIPaginatorMixin
 
@@ -45,7 +45,6 @@ class BaseFSCAPI(BaseOpenAPI):
         return "http://apis.data.go.kr" + self.path
 
     def _add_params(self, **params):
-        print(self.return_type)
 
         params.update(
             {
