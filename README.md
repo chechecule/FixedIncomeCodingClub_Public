@@ -1,4 +1,4 @@
-# FixedIncomeCodingClub_Yeoui
+# FixedIncomeCodingClub
 
 This is the public version of the FixedIncomeCodingClub Repository. This project started in 2023 June 10, for the purpose of studying fixed income coding, and to ultimately build projects that can be applied in the workplace environment. 
 
