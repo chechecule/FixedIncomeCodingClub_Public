@@ -46,3 +46,6 @@ We share our weekly progress on ongoing projects. Please be aware that the code 
 #### KBond OTC Bid-Ask Search Engine Project
  * [Week 1 Notes](https://www.notion.so/KBondSearch_Week1-04c3ef412b9741eebd018cac0e4e6a10)
      * [Code](https://github.com/keonsunkim/FixedIncomeCodingClub_Public/tree/e7ae1d9ae62df170b76ad456c70559261d042b1d)
+ * [Week 2 Notes](https://www.notion.so/KBondSearch_Week2-a06f394a8370407cb17d40a889788940)
+     * [Code](https://github.com/keonsunkim/FixedIncomeCodingClub_Public/tree/ac78583aad9fa8c5fc640f1960fae5f5aa687cf4)
+
