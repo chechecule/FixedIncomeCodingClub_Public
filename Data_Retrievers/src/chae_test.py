@@ -8,7 +8,7 @@ a = wrappers.getBondData(basDt="20230803")
 a.columns
 print(a)
 a[["basDt", "scrsItmsKcdNm", "bondIsurNm", "bondSrfcInrt"]]
-
+d
 '''
 import psycopg2
 
