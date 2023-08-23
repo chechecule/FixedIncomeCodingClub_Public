@@ -1,5 +1,6 @@
 # FSC/wrappers.pye
 import pandas as pd
+
 from functools import reduce
 
 from API.core.validators import isolate_params
@@ -51,6 +52,9 @@ def getBondData(**kwargs) -> pd.DataFrame:
     bond_data_list = list()
 
     for (ret, r) in fsc:
+
+#from tqdm import tqdm
+#tqdmrnage
 ## 반복문을 통해 fsc의 요소들을 하나씩 가져와서 ret과 r로 언패킹
         bond_data_list.extend(r["response"]["body"]["items"]["item"])
     return pd.DataFrame(bond_data_list)

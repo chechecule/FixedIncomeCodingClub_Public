@@ -1,6 +1,6 @@
 # OpenDart/paginators.py
 from API.core.paginator import BasePaginatorMixin
-
+import numpy as np
 
 class FSCAPIPaginatorMixin(BasePaginatorMixin):
 
@@ -34,7 +34,7 @@ class FSCAPIPaginatorMixin(BasePaginatorMixin):
             "numOfRows", self._iterator_params["numOfRows"]
         )
 
-        self._total_page = round(
+        self._total_page = np.ceil(
             int(json_body.get("totalCount"))/\
                 int(self._iterator_params["numOfRows"])
         )
