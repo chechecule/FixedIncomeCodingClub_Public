@@ -33,7 +33,7 @@ def getBondData(**kwargs) -> pd.DataFrame:
     fsc.set_return_type("json")
     fsc.skip_validation = True
 
-    kwargs = {"numOfRows" : 15, "pageNo" : 1, "basDt" : kwargs.get("basDt")}
+    kwargs = {"numOfRows" : 5, "pageNo" : 1, "basDt" : kwargs.get("basDt")}
     #100개를 한번에 가져오고 page no 1부터 시작. 기준일자는 따로 지정
 
 

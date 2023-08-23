@@ -35,7 +35,7 @@ fsc._set_paginator_params()
 bond_data_list = list()
 
 for (ret, r) in fsc:
-    bond_data_list.append(밋r["response"]["body"]["items"]["item"])
+    bond_data_list.append(r["response"]["body"]["items"]["item"])
     break
 
 pd.DataFrame(bond_data_list)

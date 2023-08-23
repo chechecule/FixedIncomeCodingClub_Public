@@ -2,23 +2,28 @@ from API.FSC import wrappers
 from datetime import datetime, timedelta
 # date time import
 
-date = 1 # 이건 설정 / Day 설정
+date = 2 # 이건 설정 / Day 설정
 current_date = datetime.now()
 #일자설정
+
+
+#data = wrappers.getBondData(basDt="20230725")
+#print(data.columns)
+#selected_data = data[["basDt", "scrsItmsKcdNm", "bondIsurNm", "bondSrfcInrt"]]
+#print(selected_data)
+
+
 
 for i in range(date):
     t = current_date - timedelta(days=i+1)
     Dt = t.strftime("%Y%m%d")
     data = wrappers.getBondData(basDt=Dt)
-    selected_data = data[["basDt", "crno"]]  # "basDt"와 "crno" 열 선택
+    selected_data = data[["basDt", "scrsItmsKcdNm", "bondIsurNm", "bondSrfcInrt"]]
     print(selected_data)
-
-#일자 바꿔가면서 하려고
-
+    #데이터가 10이렇게해서 작게하면 안된다 ㅠㅠ
 
 
 
-print(data.columns)
 
 #a.columns
 #print(a)
