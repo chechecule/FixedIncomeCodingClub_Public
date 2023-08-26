@@ -1,5 +1,6 @@
 from API.FSC import wrappers
 from datetime import datetime, timedelta
+import pandas as pd
 # date time import
 
 date = 2 # 이건 설정 / Day 설정
@@ -7,20 +8,22 @@ current_date = datetime.now()
 #일자설정
 
 
-#data = wrappers.getBondData(basDt="20230725")
-#print(data.columns)
-#selected_data = data[["basDt", "scrsItmsKcdNm", "bondIsurNm", "bondSrfcInrt"]]
-#print(selected_data)
 
-
+all_data = pd.DataFrame()
 
 for i in range(date):
     t = current_date - timedelta(days=i+1)
     Dt = t.strftime("%Y%m%d")
     data = wrappers.getBondData(basDt=Dt)
     selected_data = data[["basDt", "scrsItmsKcdNm", "bondIsurNm", "bondSrfcInrt"]]
-    print(selected_data)
-    #데이터가 10이렇게해서 작게하면 안된다 ㅠㅠ
+    all_data = all_data._append(selected_data, ignore_index=True)
+
+
+print(all_data)
+#data = wrappers.getBondData(basDt="20230725")
+#print(data.columns)
+#selected_data = data[["basDt", "scrsItmsKcdNm", "bondIsurNm", "bondSrfcInrt"]]
+#print(selected_data)
 
 
 
