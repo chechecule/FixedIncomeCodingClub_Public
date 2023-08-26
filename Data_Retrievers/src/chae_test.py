@@ -20,17 +20,6 @@ for i in range(date):
 
 
 print(all_data)
-#data = wrappers.getBondData(basDt="20230725")
-#print(data.columns)
-#selected_data = data[["basDt", "scrsItmsKcdNm", "bondIsurNm", "bondSrfcInrt"]]
-#print(selected_data)
-
-
-
-
-#a.columns
-#print(a)
-#a[["basDt", "scrsItmsKcdNm", "bondIsurNm", "bondSrfcInrt"]]
 
 '''
 import psycopg2
